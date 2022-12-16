@@ -1,0 +1,8 @@
+# ignore everything
+**
+
+# except what we need
+!/pm25_iweek_startdate.csv
+!/habre.tif
+!/renv.lock
+!/entrypoint.R
