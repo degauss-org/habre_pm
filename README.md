@@ -13,8 +13,8 @@ docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/habre_pm:0.1.0 my_address_file_
 
 will produce `my_address_file_geocoded_habre_pm_0.1.0.csv` with added columns:
 
-- **`this_geomarker`**: a definition of this geomarker
-- **`that_geomarker`**: a definition of that geomarker
+- **`pm`**: a definition of this geomarker
+- **`sd`**: a definition of that geomarker
 
 ### Optional Argument
 
