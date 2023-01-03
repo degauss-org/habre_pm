@@ -28,7 +28,7 @@ COPY renv.lock .
 
 RUN R --quiet -e "renv::restore()"
 
-COPY habre.tif .
+ADD https://habre.s3-us-east-2.amazonaws.com/habre.tif habre.tif
 COPY pm25_iweek_startdate.csv .
 COPY entrypoint.R .
 
