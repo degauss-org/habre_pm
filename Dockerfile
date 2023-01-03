@@ -2,7 +2,7 @@ FROM rocker/r-ver:4.2.2
 
 # DeGAUSS container metadata
 ENV degauss_name="habre_pm"
-ENV degauss_version="0.1.0"
+ENV degauss_version="0.2.0"
 ENV degauss_description="weekly pm2.5 for California (Habre)"
 
 # add OCI labels based on environment variables too
