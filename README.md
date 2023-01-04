@@ -24,6 +24,9 @@ will produce `my_address_file_geocoded_habre_pm_0.2.0.csv` with added columns:
 ## Geomarker Data
 
 - PM2.5 rasters were created using a model developed by Rima Habre and Lianfa Li. 
+
+> Li L, Girguis M, Lurmann F, Pavlovic N, McClure C, Franklin M, Wu J, Oman LD, Breton C, Gilliland F, Habre R. Ensemble-based deep learning for estimating PM2. 5 over California with multisource big data including wildfire smoke. Environment international. 2020 Dec 1;145:106143. https://doi.org/10.1016/j.envint.2020.106143
+
 - The raster stack used in this container is stored in S3 at [`s3://habre/habre.tif`](https://habre.s3-us-east-2.amazonaws.com/habre.tif)
 - Individual rasters that make up the raster stack are stored at [`s3://habre/li_2020/`](https://habre.s3-us-east-2.amazonaws.com/li_2020/)
 
