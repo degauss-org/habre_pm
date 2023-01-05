@@ -5,30 +5,30 @@
 
 ## Using
 
-If `my_address_file_geocoded.csv` is a file in the current working directory with coordinate columns named `lat` and `lon`, then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
+If `my_address_file_geocoded.csv` is a file in the current working directory with coordinate columns named `lat`, `lon`, (within the state of California) `start_date`, and `end_date` then the [DeGAUSS command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
 
 ```sh
-docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/habre_pm:0.1.0 my_address_file_geocoded.csv
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/habre_pm:0.2.0 my_address_file_geocoded.csv
 ```
 
-will produce `my_address_file_geocoded_habre_pm_0.1.0.csv` with added columns:
+will produce `my_address_file_geocoded_habre_pm_0.2.0.csv` with added columns:
 
-- **`pm`**: a definition of this geomarker
-- **`sd`**: a definition of that geomarker
-
-### Optional Argument
-
-- If this DeGAUSS container takes an optional argument, describe its usage and effects here.
-- Be sure to also update the example output file name with the argument value.
+- **`pm`**: time weighted average of weekly PM2.5
+- **`sd`**: standard deviation
 
 ## Geomarker Methods
 
-- If needed, put details here about the methods and assumptions used in the geomarker assessment process.
+- Geocoded points are overlaid with weekly PM2.5 rasters corresponding to the input date range.
+- For date ranges that span weeks, exposures are a time-weighted average. 
 
 ## Geomarker Data
 
-- List how geomarker was created, ideally including any scripts within the repo used to do so or linking to an external repository
-- If applicable, list where geomarker data is stored in S3 using a hyperlink like: [`s3://path/to/habre_pm.rds`](https://geomarker.s3.us-east-2.amazonaws.com/path/to/habre_pm.rds)
+- PM2.5 rasters were created using a model developed by Rima Habre and Lianfa Li. 
+
+> Li L, Girguis M, Lurmann F, Pavlovic N, McClure C, Franklin M, Wu J, Oman LD, Breton C, Gilliland F, Habre R. Ensemble-based deep learning for estimating PM2. 5 over California with multisource big data including wildfire smoke. Environment international. 2020 Dec 1;145:106143. https://doi.org/10.1016/j.envint.2020.106143
+
+- The raster stack used in this container is stored in S3 at [`s3://habre/habre.tif`](https://habre.s3-us-east-2.amazonaws.com/habre.tif)
+- Individual rasters that make up the raster stack are stored at [`s3://habre/li_2020/`](https://habre.s3-us-east-2.amazonaws.com/li_2020/)
 
 ## DeGAUSS Details
 
