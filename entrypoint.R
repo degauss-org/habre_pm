@@ -76,7 +76,7 @@ d_dedup <- d_dedup |>
 d_out <- left_join(d_week, d_dedup, by = c("lat", "lon", "week")) |>
   group_by(.row) |>
   summarize(pm = round(sum(pm)/n(),2), 
-            sd = round(sum(sd)/n(),2))
+            sd = round(sqrt((sum(sd^2))/n()),2))
 
 d_out <- left_join(d, d_out, by = ".row") |>
   select(-.row)
