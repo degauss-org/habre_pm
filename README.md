@@ -15,10 +15,10 @@ of California) `start_date`, and `end_date` then the [DeGAUSS
 command](https://degauss.org/using_degauss.html#DeGAUSS_Commands):
 
 ``` sh
-docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/habre_pm:0.2.1 my_address_file_geocoded.csv
+docker run --rm -v $PWD:/tmp ghcr.io/degauss-org/habre_pm:0.2.2 my_address_file_geocoded.csv
 ```
 
-will produce `my_address_file_geocoded_habre_pm_0.2.1.csv` with added
+will produce `my_address_file_geocoded_habre_pm_0.2.2.csv` with added
 columns:
 
 - **`pm`**: time weighted average of weekly PM2.5
